@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33626.354
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.Domain", "src\HH.MindBox.Shapes.Domain\HH.MindBox.Shapes.Domain.csproj", "{27FFA99D-32B9-4824-8451-F1F2F4C3C4C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.MindBox.Shapes.Infrastructure", "src\HH.MindBox.Shapes.Infrastructure\HH.MindBox.Shapes.Infrastructure.csproj", "{2A79D68D-2DF3-410A-BB04-4339D0B49946}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4EB03DC8-A9BA-4670-825A-04CFBAFA4067}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.MindBox.Shapes.Tests.Infrastructure", "src\Tests\HH.MindBox.Shapes.Tests.Infrastructure\HH.MindBox.Shapes.Tests.Infrastructure.csproj", "{8602F3E1-BE04-4B8C-9EB2-E39F2EF2BCA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.MindBox.Shapes.Tests.Domain", "src\Tests\HH.MindBox.Shapes.Tests.Domain\HH.MindBox.Shapes.Tests.Domain.csproj", "{03C9FACD-D2EA-449D-880A-ADF801B084BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27FFA99D-32B9-4824-8451-F1F2F4C3C4C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27FFA99D-32B9-4824-8451-F1F2F4C3C4C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27FFA99D-32B9-4824-8451-F1F2F4C3C4C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27FFA99D-32B9-4824-8451-F1F2F4C3C4C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A79D68D-2DF3-410A-BB04-4339D0B49946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A79D68D-2DF3-410A-BB04-4339D0B49946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A79D68D-2DF3-410A-BB04-4339D0B49946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A79D68D-2DF3-410A-BB04-4339D0B49946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8602F3E1-BE04-4B8C-9EB2-E39F2EF2BCA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8602F3E1-BE04-4B8C-9EB2-E39F2EF2BCA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8602F3E1-BE04-4B8C-9EB2-E39F2EF2BCA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8602F3E1-BE04-4B8C-9EB2-E39F2EF2BCA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C9FACD-D2EA-449D-880A-ADF801B084BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C9FACD-D2EA-449D-880A-ADF801B084BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C9FACD-D2EA-449D-880A-ADF801B084BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C9FACD-D2EA-449D-880A-ADF801B084BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8602F3E1-BE04-4B8C-9EB2-E39F2EF2BCA7} = {4EB03DC8-A9BA-4670-825A-04CFBAFA4067}
+		{03C9FACD-D2EA-449D-880A-ADF801B084BC} = {4EB03DC8-A9BA-4670-825A-04CFBAFA4067}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2919A25C-E740-4904-B0BA-454F3F7D8290}
+	EndGlobalSection
+EndGlobal
