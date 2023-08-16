@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.DataAcces
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.AutoMapper", "src\HH.MindBox.Shapes.Automapper\HH.MindBox.Shapes.AutoMapper.csproj", "{D6471F32-2446-4207-B0F0-6C3CA95A783F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.Ulils", "src\HH.MindBox.Shapes.Utils\HH.MindBox.Shapes.Ulils.csproj", "{8DF7E26A-B983-4F31-A66D-E5E41253A00C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.Utils", "src\HH.MindBox.Shapes.Utils\HH.MindBox.Shapes.Utils.csproj", "{8DF7E26A-B983-4F31-A66D-E5E41253A00C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.UseCases", "src\HH.MindBox.Shapes.UseCases\HH.MindBox.Shapes.UseCases.csproj", "{422649B7-65E3-4E6C-A1DB-BF5142E98461}"
 EndProject
