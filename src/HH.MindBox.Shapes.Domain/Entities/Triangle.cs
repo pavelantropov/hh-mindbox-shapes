@@ -1,10 +1,10 @@
 ﻿namespace HH.MindBox.Shapes.Domain.Entities;
 
-public class Triangle : BaseShape
+public class Triangle : IShape
 {
-	public double SideA { get; set; }
-	public double SideB { get; set; }
-	public double SideC { get; set; }
+	public double SideA { get; }
+	public double SideB { get; }
+	public double SideC { get; }
 	public double Perimeter => SideA + SideB + SideC;
 
 	public Triangle(double sideA, double sideB, double sideC)
@@ -14,6 +14,7 @@ public class Triangle : BaseShape
 		SideC = sideC;
 	}
 
+	/// <summary> Является ли прямоугольным </summary>
 	public bool IsRight()
 	{
 		const double epsilon = 1E-4;
@@ -28,7 +29,7 @@ public class Triangle : BaseShape
 		return Math.Abs(squareC - squareB - squareA) < epsilon;
 	}
 
-	public override double GetArea()
+	public double CalculateArea()
 	{
 		var halfP = Perimeter / 2;
 

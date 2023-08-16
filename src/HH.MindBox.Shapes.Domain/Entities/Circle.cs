@@ -1,6 +1,6 @@
 ﻿namespace HH.MindBox.Shapes.Domain.Entities;
 
-public class Circle : BaseShape
+public class Circle : IShape
 {
 	public double Radius { get; set; }
 	public double Diameter => Radius * 2;
@@ -10,5 +10,5 @@ public class Circle : BaseShape
 		Radius = radius;
 	}
 
-	public override double GetArea() => Math.PI * Math.Pow(Radius, 2);
+	public double CalculateArea() => Math.PI * Math.Pow(Radius, 2);
 }
