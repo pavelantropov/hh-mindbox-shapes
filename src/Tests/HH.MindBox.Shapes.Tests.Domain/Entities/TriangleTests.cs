@@ -1,16 +1,13 @@
-using HH.MindBox.Shapes.Domain.Factories;
+using HH.MindBox.Shapes.Domain.Entities;
 
 namespace HH.MindBox.Shapes.Tests.Domain.Entities;
 
 [TestFixture]
 public class TriangleTests
 {
-	private ITriangleFactory _factory;
-
 	[SetUp]
 	public void Setup()
 	{
-		_factory = new TriangleFactory();
 	}
 
 	[TestCase(1, 1, 1)]
@@ -18,7 +15,7 @@ public class TriangleTests
 	[TestCase(4.2, 2, 6)]
 	public async Task Perimeter_EqualsSumOfAllSides(double sideA, double sideB, double sideC)
 	{
-		var triangle = await _factory.CreateAsync(sideA, sideB, sideC);
+		var triangle = new Triangle(sideA, sideB, sideC);
 
 		var expected = sideA + sideB + sideC;
 
@@ -30,7 +27,7 @@ public class TriangleTests
 	[TestCase(4.2, 5.6, 7)]
 	public async Task IsRight_CalledFromRightTriangle_ReturnsTrue(double sideA, double sideB, double sideC)
 	{
-		var triangle = await _factory.CreateAsync(sideA, sideB, sideC);
+		var triangle = new Triangle(sideA, sideB, sideC);
 
 		Assert.That(triangle.IsRight(), Is.True);
 	}
@@ -40,7 +37,7 @@ public class TriangleTests
 	[TestCase(4.2, 2, 6)]
 	public async Task IsRight_CalledFromObliqueTriangle_ReturnsFalse(double sideA, double sideB, double sideC)
 	{
-		var triangle = await _factory.CreateAsync(sideA, sideB, sideC);
+		var triangle = new Triangle(sideA, sideB, sideC);
 
 		Assert.That(triangle.IsRight(), Is.False);
 	}
@@ -50,7 +47,7 @@ public class TriangleTests
 	[TestCase(4.2, 2, 6)]
 	public async Task GetArea_ReturnsCorrectResult(double sideA, double sideB, double sideC)
 	{
-		var triangle = await _factory.CreateAsync(sideA, sideB, sideC);
+		var triangle = new Triangle(sideA, sideB, sideC);
 
 		var halfP = triangle.Perimeter / 2;
 		var expected = Math.Sqrt(halfP * (halfP - sideA) * (halfP - sideB) * (halfP - sideC));

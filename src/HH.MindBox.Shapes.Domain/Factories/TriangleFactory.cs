@@ -1,21 +1,21 @@
-﻿using FluentValidation;
-using HH.MindBox.Shapes.Domain.Entities;
+﻿using HH.MindBox.Shapes.Domain.Entities;
+using HH.MindBox.Shapes.Utils;
 
 namespace HH.MindBox.Shapes.Domain.Factories;
 
 public class TriangleFactory : ITriangleFactory
 {
-	private readonly IValidator<Triangle> _validator;
+	private readonly IValidationHelper _validationHelper;
 
-	public TriangleFactory (IValidator<Triangle> validator)
+	public TriangleFactory (IValidationHelper validationHelper)
 	{
-		_validator = validator;
+		_validationHelper = validationHelper;
 	}
 
 	public async Task<Triangle> CreateAsync(double sideA, double sideB, double sideC)
 	{
 		var shape = new Triangle(sideA, sideB, sideC);
-		await _validator.ValidateAsync(shape);
+		await _validationHelper.ValidateAsync(shape);
 		return shape;
 	}
 }

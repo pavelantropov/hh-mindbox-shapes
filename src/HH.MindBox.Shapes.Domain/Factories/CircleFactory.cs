@@ -1,21 +1,21 @@
-﻿using FluentValidation;
-using HH.MindBox.Shapes.Domain.Entities;
+﻿using HH.MindBox.Shapes.Domain.Entities;
+using HH.MindBox.Shapes.Utils;
 
 namespace HH.MindBox.Shapes.Domain.Factories;
 
 public class CircleFactory : ICircleFactory
 {
-	private readonly IValidator<Circle> _validator;
+	private readonly IValidationHelper _validationHelper;
 
-	public CircleFactory(IValidator<Circle> validator)
+	public CircleFactory(IValidationHelper validationHelper)
 	{
-		_validator = validator;
+		_validationHelper = validationHelper;
 	}
 
 	public async Task<Circle> CreateAsync(double radius)
 	{
 		var shape = new Circle(radius);
-		await _validator.ValidateAsync(shape);
+		await _validationHelper.ValidateAsync(shape);
 		return shape;
 	}
 }

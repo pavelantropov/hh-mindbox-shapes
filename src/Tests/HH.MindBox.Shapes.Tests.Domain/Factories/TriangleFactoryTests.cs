@@ -1,4 +1,7 @@
-﻿using HH.MindBox.Shapes.Domain.Factories;
+﻿using HH.MindBox.Shapes.Utils;
+using HH.MindBox.Shapes.Domain.Entities;
+using HH.MindBox.Shapes.Domain.Factories;
+using Moq;
 
 namespace HH.MindBox.Shapes.Tests.Domain.Factories;
 
@@ -10,7 +13,9 @@ public class TriangleFactoryTests
 	[SetUp]
 	public void Setup()
 	{
-		_factory = new TriangleFactory();
+		var validatorMock = new Mock<IValidationHelper>();
+
+		_factory = new TriangleFactory(validatorMock.Object);
 	}
 
 	[TestCase(-1, 1, 1)]
@@ -19,29 +24,26 @@ public class TriangleFactoryTests
 	[TestCase(0, 1, 1)]
 	[TestCase(1, 0, 1)]
 	[TestCase(1, 1, 0)]
-	public void CreateTriangle_GetsValueNotGreaterThanZero_ThrowsAOR(double sideA, double sideB, double sideC)
+	public async Task CreateTriangle_ValidationError_ThrowsException(double sideA, double sideB, double sideC)
 	{
-		Assert.That(() => _factory.Create(sideA, sideB, sideC), Throws.TypeOf<ArgumentOutOfRangeException>());
-	}
+		var validatorMock = new Mock<IValidationHelper>();
+		validatorMock.Setup(m => m.ValidateAsync(It.IsAny<Triangle>())).Throws<InvalidOperationException>();
+		_factory = new TriangleFactory(validatorMock.Object);
 
-	[TestCase(5, 2, 1)]
-	[TestCase(1, 4, 2)]
-	[TestCase(3, 3, 8)]
-	public void CreateTriangle_GetsSideGreaterThanSumOfOtherSides_ThrowsAOR(double sideA, double sideB, double sideC)
-	{
-		Assert.That(() => _factory.Create(sideA, sideB, sideC), Throws.TypeOf<ArgumentOutOfRangeException>());
+		Assert.That(async () => await _factory.CreateAsync(sideA, sideB, sideC), Throws.TypeOf<InvalidOperationException>());
 	}
 
 	[TestCase(1, 1, 1)]
 	[TestCase(3, 4, 5)]
 	[TestCase(4.2, 2, 6)]
-	public void CreateTriangle_GetsValues_ReturnsCorrectObject(double sideA, double sideB, double sideC)
+	public async Task CreateTriangle_GetsValues_ReturnsCorrectObject(double sideA, double sideB, double sideC)
 	{
-		var triangle = _factory.Create(sideA, sideB, sideC);
-		
+		var triangle = await _factory.CreateAsync(sideA, sideB, sideC);
+
 		var resultSides = new[] { triangle.SideA, triangle.SideB, triangle.SideC };
 		var expectedSides = new[] { sideA, sideB, sideC };
 
+		Assert.That(triangle, Is.InstanceOf<Triangle>());
 		CollectionAssert.AreEquivalent(resultSides, expectedSides);
 	}
 }

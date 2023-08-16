@@ -6,16 +6,17 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using FluentValidation;
-using HH.MindBox.Shapes.Api.Model;
 using HH.MindBox.Shapes.Validation;
 using Microsoft.AspNetCore.Mvc;
-using HH.MindBox.Shapes.Domain.Entities;
 using HH.MindBox.Shapes.UseCases;
 using System.Diagnostics.CodeAnalysis;
+using HH.MindBox.Shapes.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddTransient<IValidationHelper, ValidationHelper>();
+
 builder.Services.AddTransient<ICircleFactory, CircleFactory>();
 builder.Services.AddTransient<ITriangleFactory, TriangleFactory>();
 
@@ -93,7 +94,14 @@ app.UseHttpsRedirection();
 
 app.MapGet("/circle", async ([FromQuery][NotNull] double radius, IGetCircleInfoUseCase useCase, CancellationToken cancellationToken) =>
 {
-	return Results.Ok(await useCase.Invoke(radius, cancellationToken));
+	try
+	{
+		return Results.Ok(await useCase.Invoke(radius, cancellationToken));
+	}
+	catch (InvalidOperationException ex)
+	{
+		return Results.BadRequest(ex.Message);
+	}
 })
 .WithName("GetCircleInfo")
 .WithOpenApi();
@@ -101,7 +109,14 @@ app.MapGet("/circle", async ([FromQuery][NotNull] double radius, IGetCircleInfoU
 app.MapGet("/triangle", async ([FromQuery][NotNull] double sideA, [FromQuery][NotNull] double sideB, [FromQuery][NotNull] double sideC, 
 		IGetTriangleInfoUseCase useCase, CancellationToken cancellationToken) =>
 {
-	return Results.Ok(await useCase.Invoke(sideA, sideB, sideC, cancellationToken));
+	try
+	{
+		return Results.Ok(await useCase.Invoke(sideA, sideB, sideC, cancellationToken));
+	}
+	catch (InvalidOperationException ex)
+	{
+		return Results.BadRequest(ex.Message);
+	}
 })
 .WithName("GetTriangleInfo")
 .WithOpenApi();

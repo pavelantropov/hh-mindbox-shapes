@@ -1,4 +1,7 @@
-﻿using HH.MindBox.Shapes.Domain.Factories;
+﻿using HH.MindBox.Shapes.Domain.Entities;
+using HH.MindBox.Shapes.Domain.Factories;
+using HH.MindBox.Shapes.Utils;
+using Moq;
 
 namespace HH.MindBox.Shapes.Tests.Domain.Factories;
 
@@ -10,14 +13,21 @@ public class CircleFactoryTests
 	[SetUp]
 	public void Setup()
 	{
-		_factory = new CircleFactory();
+		var validatorMock = new Mock<IValidationHelper>();
+
+		_factory = new CircleFactory(validatorMock.Object);
 	}
 
 	[TestCase(-1)]
 	[TestCase(0)]
-	public async Task CreateCircle_GetsValueNotGreaterThanZero_ThrowsAOR(double radius)
+	[TestCase(1)]
+	public async Task CreateCircle_ValidationError_ThrowsException(double radius)
 	{
-		Assert.That(async () => await _factory.CreateAsync(radius), Throws.TypeOf<ArgumentOutOfRangeException>());
+		var validatorMock = new Mock<IValidationHelper>();
+		validatorMock.Setup(m => m.ValidateAsync(It.IsAny<Circle>())).Throws<InvalidOperationException>();
+		_factory = new CircleFactory(validatorMock.Object);
+
+		Assert.That(async () => await _factory.CreateAsync(radius), Throws.TypeOf<InvalidOperationException>());
 	}
 
 	[TestCase(1)]
@@ -27,6 +37,7 @@ public class CircleFactoryTests
 	{
 		var circle = await _factory.CreateAsync(radius);
 
+		Assert.That(circle, Is.InstanceOf<Circle>());
 		Assert.That(circle.Radius, Is.EqualTo(radius));
 	}
 }
