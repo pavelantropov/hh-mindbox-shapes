@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HH.MindBox.Shapes.Api.Model\HH.MindBox.Shapes.Api.Model.csproj" />
+    <ProjectReference Include="..\HH.MindBox.Shapes.Domain\HH.MindBox.Shapes.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

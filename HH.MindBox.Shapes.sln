@@ -5,13 +5,27 @@ VisualStudioVersion = 17.6.33626.354
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.Domain", "src\HH.MindBox.Shapes.Domain\HH.MindBox.Shapes.Domain.csproj", "{27FFA99D-32B9-4824-8451-F1F2F4C3C4C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.MindBox.Shapes.Infrastructure", "src\HH.MindBox.Shapes.Infrastructure\HH.MindBox.Shapes.Infrastructure.csproj", "{2A79D68D-2DF3-410A-BB04-4339D0B49946}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.Infrastructure", "src\HH.MindBox.Shapes.Infrastructure\HH.MindBox.Shapes.Infrastructure.csproj", "{2A79D68D-2DF3-410A-BB04-4339D0B49946}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4EB03DC8-A9BA-4670-825A-04CFBAFA4067}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.MindBox.Shapes.Tests.Infrastructure", "src\Tests\HH.MindBox.Shapes.Tests.Infrastructure\HH.MindBox.Shapes.Tests.Infrastructure.csproj", "{8602F3E1-BE04-4B8C-9EB2-E39F2EF2BCA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.Tests.Infrastructure", "src\Tests\HH.MindBox.Shapes.Tests.Infrastructure\HH.MindBox.Shapes.Tests.Infrastructure.csproj", "{8602F3E1-BE04-4B8C-9EB2-E39F2EF2BCA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.MindBox.Shapes.Tests.Domain", "src\Tests\HH.MindBox.Shapes.Tests.Domain\HH.MindBox.Shapes.Tests.Domain.csproj", "{03C9FACD-D2EA-449D-880A-ADF801B084BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.Tests.Domain", "src\Tests\HH.MindBox.Shapes.Tests.Domain\HH.MindBox.Shapes.Tests.Domain.csproj", "{03C9FACD-D2EA-449D-880A-ADF801B084BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.Api", "src\HH.MindBox.Shapes.Api\HH.MindBox.Shapes.Api.csproj", "{BA4C6C41-DA0A-454B-9A31-6F1210534C6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.DataAccess", "src\HH.MindBox.Shapes.DataAccess\HH.MindBox.Shapes.DataAccess.csproj", "{93657981-B7CF-4A8E-B1C0-324413F70F4C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.AutoMapper", "src\HH.MindBox.Shapes.Automapper\HH.MindBox.Shapes.AutoMapper.csproj", "{D6471F32-2446-4207-B0F0-6C3CA95A783F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.Ulils", "src\HH.MindBox.Shapes.Utils\HH.MindBox.Shapes.Ulils.csproj", "{8DF7E26A-B983-4F31-A66D-E5E41253A00C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HH.MindBox.Shapes.UseCases", "src\HH.MindBox.Shapes.UseCases\HH.MindBox.Shapes.UseCases.csproj", "{422649B7-65E3-4E6C-A1DB-BF5142E98461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.MindBox.Shapes.Api.Model", "src\HH.MindBox.Shapes.Api.Model\HH.MindBox.Shapes.Api.Model.csproj", "{65295D1B-4AE7-4C49-AC75-D5DC593C9D5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.MindBox.Shapes.Validation", "src\HH.MindBox.Shapes.Validation\HH.MindBox.Shapes.Validation.csproj", "{1907B829-D681-4994-A02D-1F57EC764190}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +49,34 @@ Global
 		{03C9FACD-D2EA-449D-880A-ADF801B084BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03C9FACD-D2EA-449D-880A-ADF801B084BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03C9FACD-D2EA-449D-880A-ADF801B084BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA4C6C41-DA0A-454B-9A31-6F1210534C6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4C6C41-DA0A-454B-9A31-6F1210534C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4C6C41-DA0A-454B-9A31-6F1210534C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4C6C41-DA0A-454B-9A31-6F1210534C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93657981-B7CF-4A8E-B1C0-324413F70F4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93657981-B7CF-4A8E-B1C0-324413F70F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93657981-B7CF-4A8E-B1C0-324413F70F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93657981-B7CF-4A8E-B1C0-324413F70F4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6471F32-2446-4207-B0F0-6C3CA95A783F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6471F32-2446-4207-B0F0-6C3CA95A783F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6471F32-2446-4207-B0F0-6C3CA95A783F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6471F32-2446-4207-B0F0-6C3CA95A783F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF7E26A-B983-4F31-A66D-E5E41253A00C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF7E26A-B983-4F31-A66D-E5E41253A00C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF7E26A-B983-4F31-A66D-E5E41253A00C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF7E26A-B983-4F31-A66D-E5E41253A00C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{422649B7-65E3-4E6C-A1DB-BF5142E98461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{422649B7-65E3-4E6C-A1DB-BF5142E98461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{422649B7-65E3-4E6C-A1DB-BF5142E98461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{422649B7-65E3-4E6C-A1DB-BF5142E98461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65295D1B-4AE7-4C49-AC75-D5DC593C9D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65295D1B-4AE7-4C49-AC75-D5DC593C9D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65295D1B-4AE7-4C49-AC75-D5DC593C9D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65295D1B-4AE7-4C49-AC75-D5DC593C9D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1907B829-D681-4994-A02D-1F57EC764190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1907B829-D681-4994-A02D-1F57EC764190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1907B829-D681-4994-A02D-1F57EC764190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1907B829-D681-4994-A02D-1F57EC764190}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
