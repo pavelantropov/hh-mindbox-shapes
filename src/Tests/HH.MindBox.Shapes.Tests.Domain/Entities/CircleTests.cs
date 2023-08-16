@@ -5,20 +5,20 @@ namespace HH.MindBox.Shapes.Tests.Domain.Entities;
 [TestFixture]
 public class CircleTests
 {
-	private IShapeFactory _factory;
+	private ICircleFactory _factory;
 
 	[SetUp]
 	public void Setup()
 	{
-		_factory = new ShapeFactory();
+		_factory = new CircleFactory();
 	}
 
 	[TestCase(1)]
 	[TestCase(3)]
 	[TestCase(4.2)]
-	public void Diameter_EqualsDoubleRadius(double radius)
+	public async Task Diameter_EqualsDoubleRadius(double radius)
 	{
-		var circle = _factory.CreateCircle(radius);
+		var circle = await _factory.CreateAsync(radius);
 
 		var expected = radius * 2;
 
@@ -28,12 +28,12 @@ public class CircleTests
 	[TestCase(1)]
 	[TestCase(3)]
 	[TestCase(4.2)]
-	public void GetArea_ReturnsCorrectResult(double radius)
+	public async Task GetArea_ReturnsCorrectResult(double radius)
 	{
-		var circle = _factory.CreateCircle(radius);
+		var circle = await _factory.CreateAsync(radius);
 
 		var expected = Math.Pow(radius, 2) * Math.PI;
 
-		Assert.That(circle.GetArea(), Is.EqualTo(expected));
+		Assert.That(circle.CalculateArea(), Is.EqualTo(expected));
 	}
 }
